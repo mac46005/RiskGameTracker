@@ -18,36 +18,44 @@ Maybe automatically save data when data changes
 
 -SqLite: *System.Data.SqLite.Core*
 
-
 -Dapper
-
 
 -Mobile Application
 
-
 -Xamarin
-
 
 -Android
 
 
 /////////////////////////////////////
+
 ###**Models**###
 
 **Player**
 -int Id-
+
 -*Maybe*=====>string PlayerName-
+
 -int ZonesOccupied-
+
 -int BonusAmount-
 
 
 *Maybe IF SAVING PLAYER DATA AND SAVING FINSISHED GAME*
+
 **GameData**
+
 -int Id-
+
 /////////////////////////////////////
 ###**Views**
+
 -NavigationPage-
+
 -MainPage-
+
 -NewGameSetUp-
+
 -CurrentGame-
+
 -*Maybe*=====>Depending if saving player data-
