@@ -10,5 +10,6 @@ namespace RiskGameTracker.Library.Models
         public string PlayerName { get; set; }
         public int ZonesOccupied { get; set; }
         public int BonusAmount { get; set; }
+        public int SoldierAmount { get; set; }
     }
 }
