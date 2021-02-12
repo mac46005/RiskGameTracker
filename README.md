@@ -1,7 +1,7 @@
 # RiskGameTracker
 A simple **Risk** Tracker mobile application.
 
-###**NOTES**
+###**NOTES**###
 *FOR CLASSIC RISK ONLY - FOR NOW*
 When app starts shows options for new game or continue current game.
 Will only save one game data. Pressing new game will overwrite the game.
@@ -13,7 +13,7 @@ Will have have optons under player data to choose bonus areas *CLASSIC RISK*.
 Depending on what bonus areas player has it will grey out for other players.
 Maybe automatically save data when data changes
 
-###**Technologies Used**
+###**Technologies Used**###
 -SqLite: *System.Data.SqLite.Core*
 -Dapper
 -Mobile Application
@@ -22,22 +22,22 @@ Maybe automatically save data when data changes
 
 
 /////////////////////////////////////
-###**Models**
+###**Models**###
 
 **Player**
-int Id
-*Maybe*=====>string PlayerName
-int ZonesOccupied
-int BonusAmount
+-int Id-
+-*Maybe*=====>string PlayerName-
+-int ZonesOccupied-
+-int BonusAmount-
 
 
 *Maybe IF SAVING PLAYER DATA AND SAVING FINSISHED GAME*
 **GameData**
-int Id
+-int Id-
 /////////////////////////////////////
 ###**Views**
-NavigationPage
-MainPage
-NewGameSetUp
-CurrentGame
-*Maybe*=====>Depending if saving player data
+-NavigationPage-
+-MainPage-
+-NewGameSetUp-
+-CurrentGame-
+-*Maybe*=====>Depending if saving player data-
