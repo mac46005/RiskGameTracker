@@ -14,10 +14,20 @@ Depending on what bonus areas player has it will grey out for other players.
 Maybe automatically save data when data changes
 
 ###**Technologies Used**###
+
+
 -SqLite: *System.Data.SqLite.Core*
+
+
 -Dapper
+
+
 -Mobile Application
+
+
 -Xamarin
+
+
 -Android
 
 
