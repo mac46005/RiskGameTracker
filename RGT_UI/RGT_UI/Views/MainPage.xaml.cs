@@ -16,5 +16,11 @@ namespace RGT_UI.Views
         {
             InitializeComponent();
         }
+
+        private async void NewGame_Clicked(object sender, EventArgs e)
+        {
+            Routing.RegisterRoute(nameof(NewGameSetUpPage),typeof(NewGameSetUpPage));
+            await Shell.Current.GoToAsync($"{nameof(NewGameSetUpPage)}");
+        }
     }
 }

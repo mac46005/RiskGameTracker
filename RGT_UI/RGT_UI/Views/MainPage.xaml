@@ -15,67 +15,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="4" Text="NEW GAME" 
+            <Button x:Name="NewGame" Grid.Row="4" Text="NEW GAME" 
                     BackgroundColor="Red"  TextColor="Green"
-                    FontAttributes="Bold"/>
+                    FontAttributes="Bold" Clicked="NewGame_Clicked"/>
             <Button Grid.Row="6" Text="Continue Current Game" 
                     BackgroundColor="Green"  TextColor="Red"
                     FontAttributes="Bold"/>
-            
-            
-            
-            <Grid Grid.Row="1" BackgroundColor="Green">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="15"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="15"/>
-                    <RowDefinition Height="15"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    
-                </Grid.ColumnDefinitions>
-                <Label Text="PLAYER NAME" Grid.Row="0" FontAttributes="Bold"/>
-                <Label Text="ENTER Zones Occupied" Grid.Row="1"/>
-                <Entry Placeholder="Enter Value" Grid.Row="2" FontSize="10"/>
-                <Label Text="Bonus Zones" Grid.Row="3"/>
-                <Grid Grid.Row="4">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Text="NA" Grid.Column="0"/>
-                    <CheckBox Grid.Column="1" />
-                    <Label Text="SA" Grid.Column="2"/>
-                    <CheckBox Grid.Column="3" />
-                    <Label Text="AF" Grid.Column="4"/>
-                    <CheckBox Grid.Column="5" />
-                    <Label Text="EU" Grid.Column="6"/>
-                    <CheckBox Grid.Column="7" />
-                    <Label Text="AU" Grid.Column="8"/>
-                    <CheckBox Grid.Column="9" />
-                    <Label Text="AS" Grid.Column="10"/>
-                    <CheckBox Grid.Column="11" />
-                </Grid>
-                <StackLayout Orientation="Horizontal" Grid.Row="5">
-                    <Label Text="Zones:" FontSize="20"/>
-                    <Label Text="12" FontSize="20" FontAttributes="Bold"/>
-                    <Label Text="Points:" FontSize="20"/>
-                    <Label Text="4" FontSize="20" FontAttributes="Bold"/>
-                </StackLayout>
-            </Grid>
         </Grid>
-        
     </ContentPage.Content>
 </ContentPage>
