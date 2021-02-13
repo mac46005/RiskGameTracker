@@ -1,33 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RGT_UI.App">
-    <Application.Resources>
-        <Style x:Key="ContentBaseStyle"
-               TargetType="ContentPage">
-            <Setter Property="BackgroundColor"
-                    Value="#994411"/>
-        </Style>
-        <DataTemplate x:Key="PlayerTemplate">
-            <Grid>
+             x:Class="RGT_UI.Views.MainPage"
+             Style="{DynamicResource ContentBaseStyle}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="4" Text="NEW GAME" 
+                    BackgroundColor="Red"  TextColor="Green"
+                    FontAttributes="Bold"/>
+            <Button Grid.Row="6" Text="Continue Current Game" 
+                    BackgroundColor="Green"  TextColor="Red"
+                    FontAttributes="Bold"/>
+            
+            
+            
+            <Grid Grid.Row="1" BackgroundColor="Green">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="15"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="15"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     
                 </Grid.ColumnDefinitions>
                 <Label Text="PLAYER NAME" Grid.Row="0" FontAttributes="Bold"/>
-                <StackLayout Orientation="Horizontal" Grid.Row="1">
-                    <Label Text="ENTER Zones Occupied"/>
-                    <Entry Placeholder="Enter Value"/>
-                </StackLayout>
-                <Label Text="Bonus Zones" Grid.Row="2"/>
-                <Grid Grid.Row="3">
+                <Label Text="ENTER Zones Occupied" Grid.Row="1"/>
+                <Entry Placeholder="Enter Value" Grid.Row="2" FontSize="10"/>
+                <Label Text="Bonus Zones" Grid.Row="3"/>
+                <Grid Grid.Row="4">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
@@ -55,13 +68,14 @@
                     <Label Text="AS" Grid.Column="10"/>
                     <CheckBox Grid.Column="11" />
                 </Grid>
-                <StackLayout Orientation="Horizontal" Grid.Row="4">
-                    <Label Text="Zones:"/>
-                    <Label Text="12"/>
-                    <Label Text="Points:"/>
-                    <Label Text="4"/>
+                <StackLayout Orientation="Horizontal" Grid.Row="5">
+                    <Label Text="Zones:" FontSize="20"/>
+                    <Label Text="12" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="Points:" FontSize="20"/>
+                    <Label Text="4" FontSize="20" FontAttributes="Bold"/>
                 </StackLayout>
             </Grid>
-        </DataTemplate>
-    </Application.Resources>
-</Application>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
