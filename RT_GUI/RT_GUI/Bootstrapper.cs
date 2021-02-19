@@ -31,14 +31,13 @@ namespace RT_GUI
             //}
 
 
-
+            var currentAssembly = Assembly.GetExecutingAssembly();
             // Registers Types of Views and ViewModels
-            GetType().Assembly.GetTypes()
+            var list = currentAssembly.DefinedTypes
                 .Where(type => type.IsClass)
-                .Where(type => type.Name.EndsWith("ViewModel"))
-                .Where(type => type.Name.EndsWith("View"))
-                .ToList()
-                .ForEach(type => ContainerBuilder.RegisterType(type));
+                .Where(type => type.Name.EndsWith("ViewModel") || type.Name.EndsWith("View"))
+                .ToList();
+                //.ForEach(type => ContainerBuilder.RegisterType(type));
 
             // Singletons
 

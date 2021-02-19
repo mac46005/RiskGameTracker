@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RT_GUI.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace RT_GUI
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(Resolver.Resolve<MainView>());
         }
 
         protected override void OnStart()

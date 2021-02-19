@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RT_GUI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace RT_GUI.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainView : ContentPage
     {
-        public MainView()
+        public MainView(MainViewModel viewModel)
         {
             InitializeComponent();
+            viewModel.Navigation = Navigation;
+            BindingContext = viewModel;
         }
     }
 }
