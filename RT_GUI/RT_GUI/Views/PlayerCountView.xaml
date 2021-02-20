@@ -2,12 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RT_GUI.Views.PlayerCountView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Select Player Count"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Slider Minimum="2" Maximum="5"></Slider>
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid VerticalOptions="Center">
+        <Label Text="Select Player Count"/>
+        <Slider Maximum="5" Minimum="2" Value="{Binding SliderValue}"/>
+        <Label Text="{Binding SilderValue}"/>
+    </Grid>
 </ContentPage>
