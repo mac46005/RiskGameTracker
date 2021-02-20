@@ -2,9 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RT_GUI.Views.PlayerCountView">
-    <Grid VerticalOptions="Center">
-        <Label Text="Select Player Count"/>
-        <Slider Maximum="5" Minimum="2" Value="{Binding SliderValue}"/>
-        <Label Text="{Binding SilderValue}"/>
-    </Grid>
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize"
+                    Value="Large"/>
+            <Setter Property="HorizontalOptions"
+                    Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Label Text="New Game Setup" FontSize="50"/>
+        <Grid VerticalOptions="Center" Margin="0,200,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+            </Grid>
+            <Label Text="Select Player Count" Grid.Row="0"/>
+            <Slider Maximum="5" Minimum="2" Value="{Binding SliderValue}"
+                Grid.Row="1"/>
+            <Label Text="{Binding SliderValue}" Grid.Row="2"/>
+            <Button Text="Submit" Grid.Row="3"/>
+        </Grid>
+    </StackLayout>
+
 </ContentPage>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RT_GUI.Models
 {
-    class RiskModel
+    public class RiskModel
     {
     }
 }

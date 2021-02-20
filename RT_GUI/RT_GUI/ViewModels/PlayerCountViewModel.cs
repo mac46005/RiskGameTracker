@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace RT_GUI.ViewModels
 {
@@ -10,8 +12,10 @@ namespace RT_GUI.ViewModels
         {
 
         }
+        public int SliderValue { get; set; }
+        ICommand OnButtonClicked => new Command(async () =>
+        {
 
-
-
+        });
     }
 }
