@@ -25,7 +25,7 @@
             <Slider Maximum="5" Minimum="2" Value="{Binding SliderValue}"
                 Grid.Row="1"/>
             <Label Text="{Binding SliderValue}" Grid.Row="2"/>
-            <Button Text="Submit" Grid.Row="3"/>
+            <Button Text="Submit" Grid.Row="3" Command="{Binding OnButtonClicked}"/>
         </Grid>
     </StackLayout>
 
