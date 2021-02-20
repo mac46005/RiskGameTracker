@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using System.Linq;
+using RT_GUI.ViewModels;
 
 namespace RT_GUI
 {
@@ -30,14 +31,14 @@ namespace RT_GUI
             //    ContainerBuilder.RegisterType(type.AsType());
             //}
 
-
-            var currentAssembly = Assembly.GetExecutingAssembly();
             // Registers Types of Views and ViewModels
-            var list = currentAssembly.DefinedTypes
+            var currentAssembly = Assembly.GetExecutingAssembly();
+
+            currentAssembly.DefinedTypes
                 .Where(type => type.IsClass)
-                .Where(type => type.Name.EndsWith("ViewModel") || type.Name.EndsWith("View"))
-                .ToList();
-                //.ForEach(type => ContainerBuilder.RegisterType(type));
+                .Where(type => type.IsSubclassOf(typeof(ViewModel)) || type.Name.EndsWith("View"))
+                .ToList()
+                .ForEach(type => ContainerBuilder.RegisterType(type));
 
             // Singletons
 
