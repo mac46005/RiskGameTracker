@@ -6,5 +6,6 @@ namespace RT_GUI.Models
 {
     public class RiskModel
     {
+
     }
 }
