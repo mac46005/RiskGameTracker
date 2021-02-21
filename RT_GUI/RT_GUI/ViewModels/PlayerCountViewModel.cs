@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RT_GUI.Views;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
@@ -15,7 +16,7 @@ namespace RT_GUI.ViewModels
         public int SliderValue { get; set; }
         ICommand OnButtonClicked => new Command(async () =>
         {
-
+            await Navigation.PushAsync(Resolver.Resolve<PlayerSetupView>());
         });
     }
 }

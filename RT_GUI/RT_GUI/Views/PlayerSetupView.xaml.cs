@@ -11,13 +11,14 @@ using Xamarin.Forms.Xaml;
 namespace RT_GUI.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PlayerSetupView : ContentView
+    public partial class PlayerSetupView : ContentPage
     {
         public PlayerSetupView(PlayerSetupViewModel vm)
         {
             InitializeComponent();
             vm.Navigation = Navigation;
             BindingContext = vm;
+
         }
     }
 }
