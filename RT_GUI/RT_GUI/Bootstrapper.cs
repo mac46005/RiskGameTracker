@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Linq;
 using RT_GUI.ViewModels;
+using RT_GUI.Models;
 
 namespace RT_GUI
 {
@@ -39,7 +40,9 @@ namespace RT_GUI
                 .Where(type => type.IsSubclassOf(typeof(ViewModel)) || type.Name.EndsWith("View"))
                 .ToList()
                 .ForEach(type => ContainerBuilder.RegisterType(type));
-
+            // Register other
+            ContainerBuilder.RegisterType<PlayerModel>();
+            ContainerBuilder.RegisterType<PLayerViewModel>();
             // Singletons
 
         }

@@ -1,4 +1,5 @@
-﻿using RT_GUI.Views;
+﻿using RT_GUI.Models;
+using RT_GUI.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,18 +17,25 @@ namespace RT_GUI.ViewModels
         }
         public int playerCount = 0;
         public int SliderValue { get; set; }
-        public ObservableCollection<PLayerViewModel> MyProperty { get; set; }
+        public ObservableCollection<PLayerViewModel> PlayerList { get; set; }
         public ICommand OnButtonClicked => new Command(async () =>
         {
             await Navigation.PushAsync(Resolver.Resolve<PlayerSetupView>());
         });
         private void OnPageLoad()
         {
-            CreatePlayer();
+            for (int i = 0; i <= playerCount; i++)
+            {
+                var player = Resolver.Resolve<PlayerModel>();
+                player.Id = i;
+                PlayerList.Add(CreatePlayer(player));
+            }
         }
-        private void CreatePlayer()
+        private PLayerViewModel CreatePlayer(PlayerModel player)
         {
-
+            var vm = Resolver.Resolve<PLayerViewModel>();
+            vm.Player = player;
+            return vm;
         }
     }
 }
