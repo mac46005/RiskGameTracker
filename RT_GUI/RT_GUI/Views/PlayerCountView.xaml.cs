@@ -13,11 +13,11 @@ namespace RT_GUI.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlayerCountView : ContentPage
     {
-        public PlayerCountView(PlayerCountViewModel vm)
+        public PlayerCountView(/*PlayerCountViewModel vm*/)
         {
             InitializeComponent();
-            vm.Navigation = Navigation;
-            BindingContext = vm;
+            //vm.Navigation = Navigation;
+            //BindingContext = vm;
             
         }
     }
