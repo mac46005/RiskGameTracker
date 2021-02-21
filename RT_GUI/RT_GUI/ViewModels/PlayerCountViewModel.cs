@@ -20,7 +20,7 @@ namespace RT_GUI.ViewModels
         {
             var v = Resolver.Resolve<PlayerSetupView>();
             var vm = v.BindingContext as PlayerSetupViewModel;
-            vm.playerCount = SliderValue;
+            vm.PlayerCount = SliderValue;
             await Navigation.PushAsync(v);
         });
     }

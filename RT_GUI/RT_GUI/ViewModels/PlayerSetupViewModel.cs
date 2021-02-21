@@ -14,12 +14,12 @@ namespace RT_GUI.ViewModels
         {
             OnPageLoad();
         }
-        public int playerCount = 0;
+        public int PlayerCount { get; set; }
 
         public ObservableCollection<PLayerViewModel> PlayerList { get; set; } = new ObservableCollection<PLayerViewModel>();
         private void OnPageLoad()
         {
-            for (int i = 0; i <= playerCount; i++)
+            for (int i = 0; i <= PlayerCount; i++)
             {
                 var player = Resolver.Resolve<PlayerModel>();
                 player.Id = i;
