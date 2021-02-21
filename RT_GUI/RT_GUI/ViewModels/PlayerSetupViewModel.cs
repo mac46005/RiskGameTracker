@@ -16,7 +16,7 @@ namespace RT_GUI.ViewModels
         }
         public int playerCount = 0;
 
-        public ObservableCollection<PLayerViewModel> PlayerList { get; set; }
+        public ObservableCollection<PLayerViewModel> PlayerList { get; set; } = new ObservableCollection<PLayerViewModel>();
         private void OnPageLoad()
         {
             for (int i = 0; i <= playerCount; i++)

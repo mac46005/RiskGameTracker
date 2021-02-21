@@ -10,7 +10,7 @@
         <Label Text="Player Setup"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        <ListView>
+        <ListView ItemsSource="{Binding PlayerList}" RowHeight="100">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -22,9 +22,9 @@
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <Label Text="Player: " Grid.Row="0"/>
-                            <Entry Placeholder="Enter Name" Grid.Row="1"/>
+                            <Entry Text="{Binding Player.Name}" Placeholder="Enter Name" Grid.Row="1"/>
                             <Label Text="Color" Grid.Row="2"/>
-                            <Picker Grid.Row="3"/>
+                            <!--Picker Grid.Row="3"/>-->
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

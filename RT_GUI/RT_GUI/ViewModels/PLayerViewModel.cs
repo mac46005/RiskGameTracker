@@ -7,9 +7,8 @@ namespace RT_GUI.ViewModels
 {
     public class PLayerViewModel
     {
-        public PLayerViewModel(PlayerModel player)
-        {
-            Player = player;
+        public PLayerViewModel()
+        { 
         }
         public PlayerModel Player { get; set; }
     }
