@@ -13,29 +13,15 @@ namespace RT_GUI.ViewModels
     {
         public PlayerCountViewModel()
         {
-            OnPageLoad();
+            
         }
-        public int playerCount = 0;
         public int SliderValue { get; set; }
-        public ObservableCollection<PLayerViewModel> PlayerList { get; set; }
         public ICommand OnButtonClicked => new Command(async () =>
         {
-            await Navigation.PushAsync(Resolver.Resolve<PlayerSetupView>());
+            var v = Resolver.Resolve<PlayerSetupView>();
+            var vm = v.BindingContext as PlayerSetupViewModel;
+            vm.playerCount = SliderValue;
+            await Navigation.PushAsync(v);
         });
-        private void OnPageLoad()
-        {
-            for (int i = 0; i <= playerCount; i++)
-            {
-                var player = Resolver.Resolve<PlayerModel>();
-                player.Id = i;
-                PlayerList.Add(CreatePlayer(player));
-            }
-        }
-        private PLayerViewModel CreatePlayer(PlayerModel player)
-        {
-            var vm = Resolver.Resolve<PLayerViewModel>();
-            vm.Player = player;
-            return vm;
-        }
     }
 }
