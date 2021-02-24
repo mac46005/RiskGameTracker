@@ -10,8 +10,20 @@ namespace RT_GUI.Models
         [PrimaryKey]
         public int Id { get; set; }
         public string Name { get; set; }
-        public int ZonesOccupied { get; set; } = 0;
-        public int SoldierCount { get; set; } = 0;
+        private int _zonesOccupied;
+        public int ZonesOccupied 
+        {
+            get => _zonesOccupied;
+            set
+            {
+                _zonesOccupied = value;
+                OnPropertyChanged(nameof(ZonesOccupied),nameof(SoldierCount));
+            }
+        }
+        public int SoldierCount 
+        {
+            get => ZonesOccupied / 3;
+        }
         public string[] BonusZones { get; set; }
     }
 }
