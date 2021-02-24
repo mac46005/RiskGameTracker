@@ -11,13 +11,20 @@ using Xamarin.Forms.Xaml;
 namespace RT_GUI.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PlayerCountView : ContentPage
+    public partial class CurrentGameView : ContentPage
     {
-        public PlayerCountView(PlayerCountViewModel vm)
+        private CurrentGameViewModel _vm;
+        public CurrentGameView(CurrentGameViewModel vm)
         {
             InitializeComponent();
             vm.Navigation = Navigation;
             BindingContext = vm;
+            _vm = vm;
+
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
     }
 }

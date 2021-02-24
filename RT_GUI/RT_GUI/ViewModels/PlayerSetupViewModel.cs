@@ -1,4 +1,5 @@
 ﻿using RT_GUI.Models;
+using RT_GUI.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,13 +13,14 @@ namespace RT_GUI.ViewModels
     {
         public PlayerSetupViewModel()
         {
-            OnPageLoad();
+            
         }
         public int PlayerCount { get; set; }
 
-        public ObservableCollection<PLayerViewModel> PlayerList { get; set; } = new ObservableCollection<PLayerViewModel>();
-        private void OnPageLoad()
+        public ObservableCollection<PLayerViewModel> PlayerList { get; set; }
+        public void OnPageLoad()
         {
+            PlayerList = new ObservableCollection<PLayerViewModel>();
             for (int i = 0; i <= PlayerCount; i++)
             {
                 var player = Resolver.Resolve<PlayerModel>();
@@ -32,5 +34,13 @@ namespace RT_GUI.ViewModels
             vm.Player = player;
             return vm;
         }
+        public ICommand OnButtonClicked => new Command(async () =>
+        {
+            var v = Resolver.Resolve<CurrentGameView>();
+            var vm = v.BindingContext as CurrentGameViewModel;
+            vm.PlayerViewList = PlayerList;
+            
+            await Navigation.PushAsync(v);
+        });
     }
 }

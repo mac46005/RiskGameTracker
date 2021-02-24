@@ -21,6 +21,7 @@ namespace RT_GUI.ViewModels
             var v = Resolver.Resolve<PlayerSetupView>();
             var vm = v.BindingContext as PlayerSetupViewModel;
             vm.PlayerCount = SliderValue;
+            vm.OnPageLoad();
             await Navigation.PushAsync(v);
         });
     }
