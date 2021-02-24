@@ -9,6 +9,7 @@ namespace RT_GUI.Models
     {
         [PrimaryKey]
         public int Id { get; set; }
+        public string Color { get; set; }
         public string Name { get; set; }
         private int _zonesOccupied;
         public int ZonesOccupied 

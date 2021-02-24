@@ -27,8 +27,13 @@
                             <Label Text="Player: " Grid.Row="0"/>
                             <Entry Text="{Binding Player.Name}" Placeholder="Enter Name" Grid.Row="1"/>
                             <Label Text="Color" Grid.Row="2"/>
-                            <Picker Grid.Row="3">
+                            <Picker Grid.Row="3" SelectedItem="{Binding Player.Color}">
                                 <Picker.Items>
+                                    <x:String>Green</x:String>
+                                    <x:String>Yellow</x:String>
+                                    <x:String>Red</x:String>
+                                    <x:String>Black</x:String>
+                                    <x:String>Blue</x:String>
                                 </Picker.Items>
                             </Picker>
                         </Grid>
