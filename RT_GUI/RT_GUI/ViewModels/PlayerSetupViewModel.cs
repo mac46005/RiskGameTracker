@@ -13,7 +13,6 @@ namespace RT_GUI.ViewModels
     {
         public PlayerSetupViewModel()
         {
-            
         }
         public int PlayerCount { get; set; }
 
