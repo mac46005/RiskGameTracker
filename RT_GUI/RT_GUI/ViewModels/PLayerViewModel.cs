@@ -13,13 +13,14 @@ namespace RT_GUI.ViewModels
         { 
         }
         public PlayerModel Player { get; set; }
-        ICommand OnPlusClicked => new Command(() =>
+
+        public ICommand OnPlusClicked => new Command(() =>
         {
-            Player.ZonesOccupied = (Player.ZonesOccupied == 0)? Player.ZonesOccupied :  Player.ZonesOccupied + Player.ZonesOccupied++;
+            Player.ZonesOccupied++;
         });
-        ICommand OnMinusClicked => new Command(() =>
+        public ICommand OnMinusClicked => new Command(() =>
         {
-            Player.ZonesOccupied = (Player.ZonesOccupied == 0) ? Player.ZonesOccupied : Player.ZonesOccupied - Player.ZonesOccupied--;
+            Player.ZonesOccupied--;
         });
     }
 }
