@@ -17,10 +17,9 @@ namespace RT_GUI.ViewModels
         }
         public int PlayerCount { get; set; }
 
-        public ObservableCollection<PLayerViewModel> PlayerList { get; set; }
+        public ObservableCollection<PLayerViewModel> PlayerList { get; set; } = new ObservableCollection<PLayerViewModel>();
         public void OnPageLoad()
         {
-            PlayerList = new ObservableCollection<PLayerViewModel>();
             for (int i = 0; i <= PlayerCount; i++)
             {
                 var player = Resolver.Resolve<PlayerModel>();

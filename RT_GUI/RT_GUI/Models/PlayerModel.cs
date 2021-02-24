@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RT_GUI.Models
 {
-    public class PlayerModel
+    public class PlayerModel : Model
     {
         [PrimaryKey]
         public int Id { get; set; }
