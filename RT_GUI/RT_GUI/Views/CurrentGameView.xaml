@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:RT_GUI.Converters"
              x:Class="RT_GUI.Views.CurrentGameView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:PlayerColorConverter x:Key="playerColor"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -12,7 +18,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid>
+                        <Grid BackgroundColor="{Binding Player.Color,Converter={StaticResource playerColor}}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
