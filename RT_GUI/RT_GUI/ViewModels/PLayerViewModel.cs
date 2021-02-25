@@ -22,5 +22,14 @@ namespace RT_GUI.ViewModels
         {
             Player.ZonesOccupied--;
         });
+
+        public void BonusZones_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            var cb = (CheckBox)sender;
+            if (cb.StyleId == "NA")
+            {
+                //do something
+            }
+        }
     }
 }

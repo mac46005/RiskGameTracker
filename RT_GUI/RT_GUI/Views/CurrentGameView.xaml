@@ -29,8 +29,7 @@
                             <Button Text="+" Grid.Row="1" Grid.Column="0" Command="{Binding OnPlusClicked}"/>
                             <Button Text="-" Grid.Row="1" Grid.Column="1" Command="{Binding OnMinusClicked}"/>
                             <Label Text="{Binding Player.ZonesOccupied}" Grid.Row="2" FontSize="15"/>
-                            <Picker ItemsSource="{Binding _riskModel.BonusZones}">
-                            </Picker>
+                            <CheckBox StyleId="NA" CheckedChanged="{Binding BonusZones_CheckedChanged}"/>
                             <Label Text="Total Soldier Points: " Grid.Row="3" FontSize="Small"/>
                             <Label Text="{Binding Player.SoldierCount}" Grid.Row="4"/>
                         </Grid>
