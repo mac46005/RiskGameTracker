@@ -56,13 +56,54 @@ namespace RT_GUI.ViewModels
 
         }
 
-        private int BonusPoints(string area)
+        private int AddBonusPoints(string area)
         {
             int points = 0;
             switch (area)
             {
                 case nameof(NA):
-                    Player.SoldierCount += 
+                    Player.TotalPoints += 5;
+                    break;
+                case nameof(SA):
+                    Player.TotalPoints += 2;
+                    break;
+                case nameof(AF):
+                    Player.TotalPoints += 3;
+                    break;
+                case nameof(EU):
+                    Player.TotalPoints += 5;
+                    break;
+                case nameof(AU):
+                    Player.TotalPoints +=2;
+                    break;
+                case nameof(AS):
+                    Player.TotalPoints += 7;
+                    break;
+            }
+            return points;
+        }
+        private int SubstractBonusPoints(string area)
+        {
+            int points = 0;
+            switch (area)
+            {
+                case nameof(NA):
+                    Player.TotalPoints -= 5;
+                    break;
+                case nameof(SA):
+                    Player.TotalPoints -= 2;
+                    break;
+                case nameof(AF):
+                    Player.TotalPoints -= 3;
+                    break;
+                case nameof(EU):
+                    Player.TotalPoints -= 5;
+                    break;
+                case nameof(AU):
+                    Player.TotalPoints -= 2;
+                    break;
+                case nameof(AS):
+                    Player.TotalPoints -= 7;
                     break;
             }
             return points;
