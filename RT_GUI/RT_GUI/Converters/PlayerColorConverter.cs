@@ -28,7 +28,7 @@ namespace RT_GUI.Converters
             }
             else if (strVal == rCol[3])
             {
-                playerColor = Color.Black;
+                playerColor = Color.DarkGray;
             }
             return playerColor;
         }

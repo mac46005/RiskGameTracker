@@ -8,10 +8,8 @@ namespace RT_GUI.ViewModels
 {
     public class CurrentGameViewModel : ViewModel
     {
-        RiskModel _riskModel;
-        public CurrentGameViewModel(RiskModel riskModel)
+        public CurrentGameViewModel()
         {
-            _riskModel = riskModel;
         }
 
         public ObservableCollection<PLayerViewModel> PlayerViewList { get; set; } = new ObservableCollection<PLayerViewModel>();
