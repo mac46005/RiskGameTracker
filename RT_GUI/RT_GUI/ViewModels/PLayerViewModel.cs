@@ -25,5 +25,22 @@ namespace RT_GUI.ViewModels
 
 
 
+
+
+
+
+
+        ///Bonus Zones Checkbox
+        public bool NA { get; set; }
+        public bool SA { get; set; }
+        public bool AF { get; set; }
+        public bool EU { get; set; }
+        public bool AU { get; set; }
+        public bool AS { get; set; }
+
+
+
+
+
     }
 }

@@ -12,6 +12,22 @@ namespace RT_GUI.ViewModels
         {
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public ObservableCollection<PLayerViewModel> PlayerViewList { get; set; } = new ObservableCollection<PLayerViewModel>();
     }
 }

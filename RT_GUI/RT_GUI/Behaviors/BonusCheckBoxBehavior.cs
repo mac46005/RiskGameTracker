@@ -7,13 +7,13 @@ namespace RT_GUI.Behaviors
 {
     public class BonusCheckBoxBehavior : Behavior<CheckBox>
     {
-        protected override void OnAttachedTo(BindableObject bindable)
+        protected override void OnAttachedTo(CheckBox checkbox)
         {
-            base.OnAttachedTo(bindable);
+            base.OnAttachedTo(checkbox);
         }
-        protected override void OnDetachingFrom(CheckBox bindable)
+        protected override void OnDetachingFrom(CheckBox checkbox)
         {
-            base.OnDetachingFrom(bindable);
+            base.OnDetachingFrom(checkbox);
         }
     }
 }
