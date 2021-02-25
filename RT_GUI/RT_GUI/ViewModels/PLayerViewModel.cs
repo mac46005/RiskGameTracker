@@ -62,6 +62,7 @@ namespace RT_GUI.ViewModels
             switch (area)
             {
                 case nameof(NA):
+                    Player.SoldierCount += 
                     break;
             }
             return points;
