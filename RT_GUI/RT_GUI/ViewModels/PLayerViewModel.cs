@@ -46,7 +46,7 @@ namespace RT_GUI.ViewModels
             {
                 if (cbx == true)
                 {
-                    
+
                 }
                 else if (cbx == false)
                 {
@@ -55,60 +55,92 @@ namespace RT_GUI.ViewModels
             }
 
         }
-
-        private int AddBonusPoints(string area)
+        private Dictionary<string, int> bonusValues = new Dictionary<string, int>
         {
-            int points = 0;
-            switch (area)
-            {
-                case nameof(NA):
-                    Player.TotalPoints += 5;
-                    break;
-                case nameof(SA):
-                    Player.TotalPoints += 2;
-                    break;
-                case nameof(AF):
-                    Player.TotalPoints += 3;
-                    break;
-                case nameof(EU):
-                    Player.TotalPoints += 5;
-                    break;
-                case nameof(AU):
-                    Player.TotalPoints +=2;
-                    break;
-                case nameof(AS):
-                    Player.TotalPoints += 7;
-                    break;
-            }
-            return points;
-        }
-        private int SubstractBonusPoints(string area)
+            { nameof(NA),5 },
+            { nameof(SA),2 },
+            { nameof(AF),3 },
+            { nameof(EU),5 },
+            { nameof(AU),2 },
+            { nameof(AS),7 },
+        };
+        //private int AddBonusPoints(string area)
+        //{
+        //    int points = 0;
+        //    switch (area)
+        //    {
+        //        case nameof(NA):
+        //            Player.TotalPoints += 5;
+        //            break;
+        //        case nameof(SA):
+        //            Player.TotalPoints += 2;
+        //            break;
+        //        case nameof(AF):
+        //            Player.TotalPoints += 3;
+        //            break;
+        //        case nameof(EU):
+        //            Player.TotalPoints += 5;
+        //            break;
+        //        case nameof(AU):
+        //            Player.TotalPoints += 2;
+        //            break;
+        //        case nameof(AS):
+        //            Player.TotalPoints += 7;
+        //            break;
+        //    }
+        //    return points;
+        //}
+        //private int SubstractBonusPoints(string area)
+        //{
+        //    int points = 0;
+        //    switch (area)
+        //    {
+        //        case nameof(NA):
+        //            Player.TotalPoints -= 5;
+        //            break;
+        //        case nameof(SA):
+        //            Player.TotalPoints -= 2;
+        //            break;
+        //        case nameof(AF):
+        //            Player.TotalPoints -= 3;
+        //            break;
+        //        case nameof(EU):
+        //            Player.TotalPoints -= 5;
+        //            break;
+        //        case nameof(AU):
+        //            Player.TotalPoints -= 2;
+        //            break;
+        //        case nameof(AS):
+        //            Player.TotalPoints -= 7;
+        //            break;
+        //    }
+        //    return points;
+        //}
+
+
+        public void AssessBonusPoint()
         {
-            int points = 0;
-            switch (area)
+            int total = 0;
+            foreach (var cbx in cbxList)
             {
-                case nameof(NA):
-                    Player.TotalPoints -= 5;
-                    break;
-                case nameof(SA):
-                    Player.TotalPoints -= 2;
-                    break;
-                case nameof(AF):
-                    Player.TotalPoints -= 3;
-                    break;
-                case nameof(EU):
-                    Player.TotalPoints -= 5;
-                    break;
-                case nameof(AU):
-                    Player.TotalPoints -= 2;
-                    break;
-                case nameof(AS):
-                    Player.TotalPoints -= 7;
-                    break;
+                if (cbx == true)
+                {
+                    total += bonusValues[nameof(cbx)];
+                }
             }
-            return points;
+            if ((Player.TotalPoints - total) == 0)
+            {
+                return;
+            }
+            if ((Player.TotalPoints - total) > 0)
+            {
+                Player.TotalPoints = total;
+            }
+            if ((Player.TotalPoints - total) < 0)
+            {
+                Player.TotalPoints = total;
+            }
+
         }
-
-
     }
 }
