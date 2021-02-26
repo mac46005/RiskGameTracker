@@ -27,6 +27,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <Label Text="{Binding Player.Name}" Grid.Row="0" FontSize="15"/>
                             <Button Text="+" Grid.Row="1" Grid.Column="0" Command="{Binding OnPlusClicked}"/>
@@ -63,6 +64,8 @@
                             </Grid>
                             <Label Text="Total Soldier Points: " Grid.Row="5" FontSize="Small"/>
                             <Label Text="{Binding Player.SoldierCount}" Grid.Row="6"/>
+                            <Label Text="Total Points: " Grid.Row="7" FontSize="Small"/>
+                            <Label Text="{Binding Player.SoldierCount}" Grid.Row="8"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

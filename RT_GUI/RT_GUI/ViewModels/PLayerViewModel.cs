@@ -32,29 +32,25 @@ namespace RT_GUI.ViewModels
 
 
         ///Bonus Zones Checkbox
-        public bool NA { get; set; }
-        public bool SA { get; set; }
-        public bool AF { get; set; }
-        public bool EU { get; set; }
-        public bool AU { get; set; }
-        public bool AS { get; set; }
+        private bool _na;
+        public bool NA { get { return _na; } set { _na = value;AssessBonusPoints(); } }
+
+        private bool _sa;
+        public bool SA { get { return _sa; } set { _sa = value;AssessBonusPoints(); } }
+
+        private bool _af;
+        public bool AF { get { return _af; } set { _af = value;AssessBonusPoints(); } }
+
+        private bool _eu;
+        public bool EU { get { return _eu; } set { _eu = value;AssessBonusPoints(); } }
+
+        private bool _au;
+        public bool AU { get { return _au; } set { _au = value;AssessBonusPoints(); } }
+
+        private bool _as;
+        public bool AS { get { return _as; } set { _as = value;AssessBonusPoints(); } }
+
         private ObservableCollection<bool> cbxList;
-        private void IsClickedEvent()
-        {
-            cbxList = new ObservableCollection<bool>() { NA, SA, AF, EU, AU, AS };
-            foreach (var cbx in cbxList)
-            {
-                if (cbx == true)
-                {
-
-                }
-                else if (cbx == false)
-                {
-
-                }
-            }
-
-        }
         private Dictionary<string, int> bonusValues = new Dictionary<string, int>
         {
             { nameof(NA),5 },
@@ -64,63 +60,11 @@ namespace RT_GUI.ViewModels
             { nameof(AU),2 },
             { nameof(AS),7 },
         };
-        //private int AddBonusPoints(string area)
-        //{
-        //    int points = 0;
-        //    switch (area)
-        //    {
-        //        case nameof(NA):
-        //            Player.TotalPoints += 5;
-        //            break;
-        //        case nameof(SA):
-        //            Player.TotalPoints += 2;
-        //            break;
-        //        case nameof(AF):
-        //            Player.TotalPoints += 3;
-        //            break;
-        //        case nameof(EU):
-        //            Player.TotalPoints += 5;
-        //            break;
-        //        case nameof(AU):
-        //            Player.TotalPoints += 2;
-        //            break;
-        //        case nameof(AS):
-        //            Player.TotalPoints += 7;
-        //            break;
-        //    }
-        //    return points;
-        //}
-        //private int SubstractBonusPoints(string area)
-        //{
-        //    int points = 0;
-        //    switch (area)
-        //    {
-        //        case nameof(NA):
-        //            Player.TotalPoints -= 5;
-        //            break;
-        //        case nameof(SA):
-        //            Player.TotalPoints -= 2;
-        //            break;
-        //        case nameof(AF):
-        //            Player.TotalPoints -= 3;
-        //            break;
-        //        case nameof(EU):
-        //            Player.TotalPoints -= 5;
-        //            break;
-        //        case nameof(AU):
-        //            Player.TotalPoints -= 2;
-        //            break;
-        //        case nameof(AS):
-        //            Player.TotalPoints -= 7;
-        //            break;
-        //    }
-        //    return points;
-        //}
-
-
-        public void AssessBonusPoint()
+        public void AssessBonusPoints()
         {
             int total = 0;
+            cbxList = new ObservableCollection<bool> { NA,SA,AF,EU,AU,AS };
+            int ptsWthNoSpoints = Player.TotalPoints - Player.SoldierCount;
             foreach (var cbx in cbxList)
             {
                 if (cbx == true)
@@ -128,17 +72,19 @@ namespace RT_GUI.ViewModels
                     total += bonusValues[nameof(cbx)];
                 }
             }
-            if ((Player.TotalPoints - total) == 0)
+            if ((ptsWthNoSpoints - total) == 0)
             {
                 return;
             }
-            if ((Player.TotalPoints - total) > 0)
+            if ((ptsWthNoSpoints - total) > 0)
             {
-                Player.TotalPoints = total;
+                var subtractAmount = ptsWthNoSpoints - total;
+                Player.TotalPoints -= subtractAmount;
             }
-            if ((Player.TotalPoints - total) < 0)
+            if ((ptsWthNoSpoints - total) < 0)
             {
-                Player.TotalPoints = total;
+                var addAmount 
+                Player.TotalPoints += total;
             }
 
         }
