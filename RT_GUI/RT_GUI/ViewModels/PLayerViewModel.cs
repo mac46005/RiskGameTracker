@@ -83,7 +83,7 @@ namespace RT_GUI.ViewModels
             }
             if ((ptsWthNoSpoints - total) < 0)
             {
-                var addAmount 
+                var addAmount = total - ptsWthNoSpoints;
                 Player.TotalPoints += total;
             }
 
