@@ -33,22 +33,22 @@ namespace RT_GUI.ViewModels
 
         ///Bonus Zones Checkbox
         private bool _na;
-        public bool NA { get { return _na; } set { _na = value;AssessBonusPoints(); } }
+        public bool NA { get { return _na; } set { _na = value; AssessBonusPoints(nameof(NA)); } }
 
         private bool _sa;
-        public bool SA { get { return _sa; } set { _sa = value;AssessBonusPoints(); } }
+        public bool SA { get { return _sa; } set { _sa = value; AssessBonusPoints(nameof(SA)); } }
 
         private bool _af;
-        public bool AF { get { return _af; } set { _af = value;AssessBonusPoints(); } }
+        public bool AF { get { return _af; } set { _af = value; AssessBonusPoints(nameof(AF)); } }
 
         private bool _eu;
-        public bool EU { get { return _eu; } set { _eu = value;AssessBonusPoints(); } }
+        public bool EU { get { return _eu; } set { _eu = value; AssessBonusPoints(nameof(EU)); } }
 
         private bool _au;
-        public bool AU { get { return _au; } set { _au = value;AssessBonusPoints(); } }
+        public bool AU { get { return _au; } set { _au = value; AssessBonusPoints(nameof(AU)); } }
 
         private bool _as;
-        public bool AS { get { return _as; } set { _as = value;AssessBonusPoints(); } }
+        public bool AS { get { return _as; } set { _as = value; AssessBonusPoints(nameof(AS)); } }
 
         private ObservableCollection<bool> cbxList;
         private Dictionary<string, int> bonusValues = new Dictionary<string, int>
@@ -61,26 +61,16 @@ namespace RT_GUI.ViewModels
             { nameof(AS),7 },
         };
 
-        private Dictionary<string, BonusZone> bo = new Dictionary<string, BonusZone>
-        {
-            { nameof(NA), new BonusZone{Name = "North America", NameShort = "NA",ValueAmount = 5} },
-            { nameof(SA),new BonusZone{Name = "South America", NameShort = "SA",ValueAmount = 2}},
-            { nameof(AF),new BonusZone{Name = "Africa", NameShort = "AF",ValueAmount = 3} },
-            { nameof(EU),new BonusZone{Name = "Europe", NameShort = "EU",ValueAmount = 5} },
-            { nameof(AU),new BonusZone{Name = "Australia", NameShort = "AU",ValueAmount = 2}},
-            { nameof(AS),new BonusZone{Name = "Asia", NameShort = "AS",ValueAmount = 7 },
-        };
-
-        public void AssessBonusPoints()
+        public void AssessBonusPoints(string nameofBool)
         {
             int total = 0;
-            cbxList = new ObservableCollection<bool> { NA,SA,AF,EU,AU,AS };
+            cbxList = new ObservableCollection<bool> { NA, SA, AF, EU, AU, AS };
             int ptsWthNoSpoints = Player.TotalPoints - Player.SoldierCount;
             foreach (var cbx in cbxList)
             {
                 if (cbx == true)
                 {
-                    total += bonusValues[cbx];
+                    total += bonusValues[nameofBool];
                 }
             }
             if ((ptsWthNoSpoints - total) == 0)
@@ -95,7 +85,7 @@ namespace RT_GUI.ViewModels
             if ((ptsWthNoSpoints - total) < 0)
             {
                 var addAmount = total - ptsWthNoSpoints;
-                Player.TotalPoints += total;
+                Player.TotalPoints += addAmount;
             }
 
         }
