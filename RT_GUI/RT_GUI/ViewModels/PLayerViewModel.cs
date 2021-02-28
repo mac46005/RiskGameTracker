@@ -60,6 +60,17 @@ namespace RT_GUI.ViewModels
             { nameof(AU),2 },
             { nameof(AS),7 },
         };
+
+        private Dictionary<string, BonusZone> bo = new Dictionary<string, BonusZone>
+        {
+            { nameof(NA), new BonusZone{Name = "North America", NameShort = "NA",ValueAmount = 5} },
+            { nameof(SA),new BonusZone{Name = "South America", NameShort = "SA",ValueAmount = 2}},
+            { nameof(AF),new BonusZone{Name = "Africa", NameShort = "AF",ValueAmount = 3} },
+            { nameof(EU),new BonusZone{Name = "Europe", NameShort = "EU",ValueAmount = 5} },
+            { nameof(AU),new BonusZone{Name = "Australia", NameShort = "AU",ValueAmount = 2}},
+            { nameof(AS),new BonusZone{Name = "Asia", NameShort = "AS",ValueAmount = 7 },
+        };
+
         public void AssessBonusPoints()
         {
             int total = 0;
@@ -69,7 +80,7 @@ namespace RT_GUI.ViewModels
             {
                 if (cbx == true)
                 {
-                    total += bonusValues[nameof(cbx)];
+                    total += bonusValues[cbx];
                 }
             }
             if ((ptsWthNoSpoints - total) == 0)

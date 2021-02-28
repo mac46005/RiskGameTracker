@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace RT_GUI.Models
@@ -9,9 +10,14 @@ namespace RT_GUI.Models
         /// <summary>
         /// The bonus zone on the map.
         /// </summary>
-        public static readonly Dictionary<int, string> BonusZones = new Dictionary<int, string>()
+        public static ObservableCollection<BonusZone> BonusZones = new ObservableCollection<BonusZone>
         {
-            {0,"NA" },{1,"SA" },{2,"AF" },{3,"EU" },{4,"AU" },{5,"AS" }
+            new BonusZone{Name = "North America", NameShort = "NA",ValueAmount = 5},
+            new BonusZone{Name = "South America", NameShort = "SA",ValueAmount = 2},
+            new BonusZone{Name = "Africa", NameShort = "AF",ValueAmount = 3},
+            new BonusZone{Name = "Europe", NameShort = "EU",ValueAmount = 5},
+            new BonusZone{Name = "Australia", NameShort = "AU",ValueAmount = 2},
+            new BonusZone{Name = "Asia", NameShort = "AS",ValueAmount = 7}
         };
     }
 }
