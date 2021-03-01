@@ -33,22 +33,22 @@ namespace RT_GUI.ViewModels
 
         ///Bonus Zones Checkbox
         private bool _na;
-        public bool NA { get { return _na; } set { _na = value; AssessBonusPoints(nameof(NA)); } }
+        public bool NA { get { return _na; } set { _na = value; AssessBonusPoints(nameof(NA),NA); } }
 
         private bool _sa;
-        public bool SA { get { return _sa; } set { _sa = value; AssessBonusPoints(nameof(SA)); } }
+        public bool SA { get { return _sa; } set { _sa = value; AssessBonusPoints(nameof(SA),SA); } }
 
         private bool _af;
-        public bool AF { get { return _af; } set { _af = value; AssessBonusPoints(nameof(AF)); } }
+        public bool AF { get { return _af; } set { _af = value; AssessBonusPoints(nameof(AF),AF); } }
 
         private bool _eu;
-        public bool EU { get { return _eu; } set { _eu = value; AssessBonusPoints(nameof(EU)); } }
+        public bool EU { get { return _eu; } set { _eu = value; AssessBonusPoints(nameof(EU),EU); } }
 
         private bool _au;
-        public bool AU { get { return _au; } set { _au = value; AssessBonusPoints(nameof(AU)); } }
+        public bool AU { get { return _au; } set { _au = value; AssessBonusPoints(nameof(AU),AU); } }
 
         private bool _as;
-        public bool AS { get { return _as; } set { _as = value; AssessBonusPoints(nameof(AS)); } }
+        public bool AS { get { return _as; } set { _as = value; AssessBonusPoints(nameof(AS),AS); } }
 
         private ObservableCollection<bool> cbxList;
         private Dictionary<string, int> bonusValues = new Dictionary<string, int>
@@ -61,20 +61,29 @@ namespace RT_GUI.ViewModels
             { nameof(AS),7 },
         };
 
-        public void AssessBonusPoints(string nameofBool)
+        public void AssessBonusPoints(string nameofBool,bool boolobj)
         {
-            int total = 0;
-            cbxList = new ObservableCollection<bool> { NA, SA, AF, EU, AU, AS };
-            int ptsWthNoSpoints = Player.TotalPoints - Player.SoldierCount;
-            foreach (var cbx in cbxList)
+            //int total = 0;
+            //cbxList = new ObservableCollection<bool> { NA, SA, AF, EU, AU, AS };
+            //int ptsWthNoSpoints = Player.TotalPoints - Player.SoldierCount;
+            //foreach (var cbx in cbxList)
+            //{
+            //    if (cbx == true)
+            //    {
+            //        total += bonusValues[nameofBool];
+            //    }
+            //}
+            //Player.TotalPoints -= ptsWthNoSpoints;
+            //Player.TotalPoints += total;
+            if (boolobj == false)
             {
-                if (cbx == true)
-                {
-                    total += bonusValues[nameofBool];
-                }
+                Player.TotalPoints -= bonusValues[nameofBool];
             }
-            Player.TotalPoints -= ptsWthNoSpoints;
-            Player.TotalPoints += total;
+            else
+            {
+                Player.TotalPoints += bonusValues[nameofBool];
+            }
+
         }
     }
 }

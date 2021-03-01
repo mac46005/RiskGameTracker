@@ -38,7 +38,7 @@ namespace RT_GUI.Models
             {
                 _totalPoints =  value;
                 OnPropertyChanged(nameof(TotalPoints));
-            }
+             }
 
         } 
     }
