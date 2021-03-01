@@ -73,21 +73,8 @@ namespace RT_GUI.ViewModels
                     total += bonusValues[nameofBool];
                 }
             }
-            if ((ptsWthNoSpoints - total) == 0)
-            {
-                return;
-            }
-            if ((ptsWthNoSpoints - total) > 0)
-            {
-                var subtractAmount = ptsWthNoSpoints - total;
-                Player.TotalPoints -= subtractAmount;
-            }
-            if ((ptsWthNoSpoints - total) < 0)
-            {
-                var addAmount = total - ptsWthNoSpoints;
-                Player.TotalPoints += addAmount;
-            }
-
+            Player.TotalPoints -= ptsWthNoSpoints;
+            Player.TotalPoints += total;
         }
     }
 }
