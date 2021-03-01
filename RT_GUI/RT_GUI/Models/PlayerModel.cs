@@ -27,18 +27,13 @@ namespace RT_GUI.Models
         {
             get => ZonesOccupied / 3;
         }
-
+        public int BonusPoints { get; set; }
         //public string[] BonusZones { get; set; }
 
         private int _totalPoints;
         public int TotalPoints 
         {
-            get { return _totalPoints + SoldierCount; }
-            set
-            {
-                _totalPoints =  value;
-                OnPropertyChanged(nameof(TotalPoints));
-             }
+            get { return BonusPoints + SoldierCount; }
 
         } 
     }

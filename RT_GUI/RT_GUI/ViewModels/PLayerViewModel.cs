@@ -77,11 +77,11 @@ namespace RT_GUI.ViewModels
             //Player.TotalPoints += total;
             if (boolobj == false)
             {
-                Player.TotalPoints -= bonusValues[nameofBool];
+                Player.BonusPoints -= bonusValues[nameofBool];
             }
             else
             {
-                Player.TotalPoints += bonusValues[nameofBool];
+                Player.BonusPoints += bonusValues[nameofBool];
             }
 
         }
