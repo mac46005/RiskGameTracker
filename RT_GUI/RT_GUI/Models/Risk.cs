@@ -59,7 +59,11 @@ namespace RT_GUI.Models
         }
         private static void ProccessStartingPoints(ObservableCollection<PLayerViewModel> PlayerList)
         {
-
+            int[] startPts = { };
+            startPts[2] = 21;
+            startPts[3] = 14;
+            startPts[4] = 10;
+            startPts[5] = 7;
         }
     }
 }
