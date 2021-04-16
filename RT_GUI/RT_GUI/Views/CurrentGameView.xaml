@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <ListView ItemsSource="{Binding PlayerViewList}" RowHeight="300" Grid.Row="1">
@@ -29,7 +30,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Label Text="{Binding Player.Name}" Grid.Row="0" FontSize="15"/>
+                            <Label Text="{Binding Player.Name}" Grid.Row="0" FontSize="20" FontAttributes="Bold"/>
                             <Button Text="+" Grid.Row="1" Grid.Column="0" Command="{Binding OnPlusClicked}"/>
                             <Button Text="-" Grid.Row="1" Grid.Column="1" Command="{Binding OnMinusClicked}"/>
                             <Label Text="Zones Occupied:" Grid.Row="2" Grid.Column="0"/>
@@ -76,6 +77,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Text="Save Game"/>
     </Grid>
 
 </ContentPage>

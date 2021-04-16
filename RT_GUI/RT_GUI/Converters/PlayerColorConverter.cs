@@ -30,6 +30,10 @@ namespace RT_GUI.Converters
             {
                 playerColor = Color.DarkGray;
             }
+            else if(strVal == rCol[4])
+            {
+                playerColor = Color.Blue;
+            }
             return playerColor;
         }
 
