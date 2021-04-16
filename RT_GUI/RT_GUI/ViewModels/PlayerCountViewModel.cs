@@ -15,13 +15,21 @@ namespace RT_GUI.ViewModels
         {
             
         }
+
+        /// <summary>
+        /// The amount of players playing.
+        /// </summary>
         public int SliderValue { get; set; }
+
+        /// <summary>
+        /// Creates the playerSetup View/ViewModel. Instantiates players and sent to view.
+        /// </summary>
         public ICommand OnButtonClicked => new Command(async () =>
         {
             var v = Resolver.Resolve<PlayerSetupView>();
             var vm = v.BindingContext as PlayerSetupViewModel;
             vm.PlayerCount = SliderValue;
-            vm.OnPageLoad();
+            vm.InstantiatePlayers();
             await Navigation.PushAsync(v);
         });
     }

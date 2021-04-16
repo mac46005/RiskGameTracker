@@ -14,24 +14,47 @@ namespace RT_GUI.ViewModels
         public PlayerSetupViewModel()
         {
         }
+
+        /// <summary>
+        /// The amount of players playing.
+        /// </summary>
         public int PlayerCount { get; set; }
 
+
+        /// <summary>
+        /// The collection of players in the game.
+        /// </summary>
         public ObservableCollection<PLayerViewModel> PlayerList { get; set; } = new ObservableCollection<PLayerViewModel>();
-        public void OnPageLoad()
+
+        /// <summary>
+        /// Creates all the players counted from the PlayerCount and adds them to the PlayerList
+        /// </summary>
+        public void InstantiatePlayers()
         {
-            for (int i = 1; i <= PlayerCount; i++)
-            {
-                var player = Resolver.Resolve<PlayerModel>();
-                player.Id = i;
-                PlayerList.Add(CreatePlayer(player));
-            }
+            //for (int i = 1; i <= PlayerCount; i++)
+            //{
+            //    var player = Resolver.Resolve<PlayerModel>();
+            //    player.Id = i;
+            //    PlayerList.Add(CreatePlayerVM(player));
+            //}
+            Risk.InstantiatePlayers(PlayerCount, PlayerList);
         }
-        private PLayerViewModel CreatePlayer(PlayerModel player)
-        {
-            var vm = Resolver.Resolve<PLayerViewModel>();
-            vm.Player = player;
-            return vm;
-        }
+
+        ///// <summary>
+        ///// Creates a single new PlayerViewModel with a new PlayerModel 
+        ///// </summary>
+        ///// <param name="player">PlayerModel</param>
+        ///// <returns>PlayerViewModel</returns>
+        //private PLayerViewModel CreatePlayerVM(PlayerModel player)
+        //{
+        //    var vm = Resolver.Resolve<PLayerViewModel>();
+        //    vm.Player = player;
+        //    return vm;
+        //}
+
+        /// <summary>
+        /// Sends Created players to the CurrentGameView
+        /// </summary>
         public ICommand OnButtonClicked => new Command(async () =>
         {
             var v = Resolver.Resolve<CurrentGameView>();

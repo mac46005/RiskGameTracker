@@ -11,23 +11,6 @@ namespace RT_GUI.ViewModels
         public CurrentGameViewModel()
         {
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public ObservableCollection<PLayerViewModel> PlayerViewList { get; set; } = new ObservableCollection<PLayerViewModel>();
     }
 }
