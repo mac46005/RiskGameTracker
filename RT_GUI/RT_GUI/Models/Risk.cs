@@ -7,18 +7,18 @@ using System.Text;
 namespace RT_GUI.Models
 {
     public class Risk
-    {
+    { 
         /// <summary>
         /// The bonus zone on the map.
         /// </summary>
-        public static ObservableCollection<BonusZone> BonusZones = new ObservableCollection<BonusZone>
+        public static Dictionary<string, int> BonusPoints { get; } = new Dictionary<string, int>
         {
-            new BonusZone{Name = "North America", NameShort = "NA",ValueAmount = 5},
-            new BonusZone{Name = "South America", NameShort = "SA",ValueAmount = 2},
-            new BonusZone{Name = "Africa", NameShort = "AF",ValueAmount = 3},
-            new BonusZone{Name = "Europe", NameShort = "EU",ValueAmount = 5},
-            new BonusZone{Name = "Australia", NameShort = "AU",ValueAmount = 2},
-            new BonusZone{Name = "Asia", NameShort = "AS",ValueAmount = 7}
+            { "NA",5 },
+            { "SA",2 },
+            { "AF",3 },
+            { "EU",5 },
+            { "AU",2 },
+            { "AS",7 },
         };
 
 
@@ -44,6 +44,22 @@ namespace RT_GUI.Models
                 player.Id = i;
                 PlayerList.Add(CreatePlayerVM(player));
             }
+        }
+
+
+        public static void StartingGame(ObservableCollection<PLayerViewModel> PlayerList)
+        {
+            switch (PlayerList.Count)
+            {
+                case 2:
+                    break;
+                default:
+                    break;
+            }
+        }
+        private static void ProccessStartingPoints(ObservableCollection<PLayerViewModel> PlayerList)
+        {
+
         }
     }
 }

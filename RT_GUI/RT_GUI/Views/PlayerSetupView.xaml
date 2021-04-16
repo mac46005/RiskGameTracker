@@ -31,7 +31,7 @@
                                 <Picker.Items>
                                     <x:String>Green</x:String>
                                     <x:String>Yellow</x:String>
-                                    <x:String>Red</x:String>
+                                    <x:String>Orange</x:String>
                                     <x:String>Black</x:String>
                                     <x:String>Blue</x:String>
                                 </Picker.Items>

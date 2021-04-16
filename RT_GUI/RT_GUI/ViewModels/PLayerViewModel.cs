@@ -50,16 +50,6 @@ namespace RT_GUI.ViewModels
         private bool _as;
         public bool AS { get { return _as; } set { _as = value; AssessBonusPoints(nameof(AS),AS); } }
 
-        private ObservableCollection<bool> cbxList;
-        private Dictionary<string, int> bonusValues = new Dictionary<string, int>
-        {
-            { nameof(NA),5 },
-            { nameof(SA),2 },
-            { nameof(AF),3 },
-            { nameof(EU),5 },
-            { nameof(AU),2 },
-            { nameof(AS),7 },
-        };
 
         public void AssessBonusPoints(string nameofBool,bool boolobj)
         {
@@ -77,11 +67,11 @@ namespace RT_GUI.ViewModels
             //Player.TotalPoints += total;
             if (boolobj == false)
             {
-                Player.BonusPoints -= bonusValues[nameofBool];
+                Player.BonusPoints -= Risk.BonusPoints[nameofBool];
             }
             else
             {
-                Player.BonusPoints += bonusValues[nameofBool];
+                Player.BonusPoints += Risk.BonusPoints[nameofBool];
             }
 
         }

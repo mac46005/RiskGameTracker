@@ -10,29 +10,34 @@ namespace RT_GUI.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string[] rCol = { "Green","Yellow","Red","Black","Blue" };
+            string[] rCol = { "Green","Yellow","Orange","Black","Blue" };
 
             Color playerColor = Color.Default;
             string strVal = (string)value;
             if (strVal == rCol[0])
             {
-                playerColor = Color.Green;
+                //Green
+                playerColor = Color.FromHex("00cc00");
             }
             else if (strVal == rCol[1])
             {
-                playerColor = Color.Yellow;
+                //Yellow
+                playerColor = Color.FromHex("#cccc00");
             }
             else if (strVal == rCol[2])
             {
-                playerColor = Color.Red;
+                //Orange
+                playerColor = Color.FromHex("#ff531a");
             }
             else if (strVal == rCol[3])
             {
-                playerColor = Color.DarkGray;
+                //Black
+                playerColor = Color.FromHex("#454545");
             }
             else if(strVal == rCol[4])
             {
-                playerColor = Color.Blue;
+                //Blue
+                playerColor = Color.FromHex("#1a1aff");
             }
             return playerColor;
         }
